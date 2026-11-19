@@ -1,0 +1,36 @@
+Actividad_BigO_ApellidoNombre/
+├── src/
+│   └── ComparacionAlgoritmos.java
+├── docs/
+│   ├── Tabla_Resultados.md
+│   └── Analisis.md
+├── README.md
+└── .gitignore
+
+public class RetoConsecutivos {
+    public static void main(String[] args) {
+        int n = 10_000;
+        
+        System.nanoTime();
+        long inicio = System.nanoTime();
+        
+        // Primer ciclo independiente: O(n)
+        int contador1 = 0;
+        for (int i = 0; i < n; i++) {
+            contador1++;
+        }
+        
+        // Segundo ciclo independiente (consecutivo): O(n)
+        int contador2 = 0;
+        for (int j = 0; j < n; j++) {
+            contador2++;
+        }
+        
+        long fin = System.nanoTime();
+        long tiempoTotal = fin - inicio;
+        
+        System.out.println("Tamaño n: " + n);
+        System.out.println("Operaciones totales: " + (contador1 + contador2));
+        System.out.println("Tiempo de ejecución (nanosegundos): " + tiempoTotal);
+    }
+}
